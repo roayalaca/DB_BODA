@@ -2,7 +2,9 @@ const express = require("express");
 require("dotenv").config();
 const db = require("./utils/database");
 const confirmation = require("./models/confirmation.models");
+const absence = require("./models/absences.models");
 const confirmationrRoute = require("./routes/confirmation.routes");
+const absenceRoute = require("./routes/absences.routes")
 const cors = require("cors");
 const path = require("path");
 
@@ -10,6 +12,7 @@ const path = require("path");
 
 
 confirmation;
+absence;
 
 const app = express();
 app.use(cors());
@@ -27,6 +30,7 @@ app.get("/", (req, res) => {
 });
 
 app.use(confirmationrRoute);
+app.use(absenceRoute);
 
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en el puerto ${PORT}`);
