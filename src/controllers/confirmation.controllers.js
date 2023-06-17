@@ -1,6 +1,6 @@
 const Confirmation1 = require("../models/confirmation.models");
-const transporter = require("../utils/mailer");
 const ejs = require('ejs');
+const transporter = require("../utils/mailer"); 
 
 
 const getConfirmation = async (req, res, next) => {
@@ -25,13 +25,11 @@ const createConfirmation = async (req, res) => {
         from: "alanayaca@gmail.com",
         to: "alanayaca@gmail.com",
         subject: `Lista de asistencia`,
-        text: `Nombre del invitado: ${completename}. 
-         Asistencia: ${attendance} . 
-         Teléfono registrado: ${phone}. Hasta ahora han confirmado ${res.id} personas`,
+        text: `Holi`,
       })
       .then(() => console.log("mensaje enviado"))
       .catch((error) => console.log(error));
-
+    
   } catch (error) {
     res.status(400).json(error);
   }
