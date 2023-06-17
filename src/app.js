@@ -15,7 +15,7 @@ transporter
      subject: `Lista de asistencia`,
      text: `Probanding`,
    })
-   .then(() => console.log("mensaje enviado"))
+   .then(() => console.log("mensaje enviaderrimo"))
    .catch((error) => console.log(error));
 
 confirmation;
@@ -24,7 +24,7 @@ absence;
 const app = express();
 app.use(cors());
 app.use(express.json());
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.DB_PORT || 8000;
 
 db.sync()
   .then(() => {
