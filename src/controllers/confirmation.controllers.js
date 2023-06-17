@@ -19,30 +19,19 @@ const createConfirmation = async (req, res) => {
     await Confirmation1.create({ completename, attendance, phone });
 
     res.status(201).send();
-    if (req.body.attendance === "no") {
-      transporter
-        .sendMail({
-          from: "alanayaca@gmail.com",
-          to: "alanayaca@gmail.com",
-          subject: `Lista de asistencia`,
-          text: `Nombre del invitado: ${completename}. Asistencia: ${attendance} . Teléfono registrado: ${phone}. Hasta ahora han confirmado ${res.id} personas`,
-        })
-        .then(() => console.log("mensaje enviado"))
-        .catch((error) => console.log(error));
-    } else {
-      transporter
-        .sendMail({  
-          from: "alanayaca@gmail.com",
-          to: "alanayaca@gmail.com",
-          subject: `Lista de asistencia`,
-          text: 
-        `Nombre del invitado: ${completename}. 
+
+    transporter
+      .sendMail({
+        from: "alanayaca@gmail.com",
+        to: "alanayaca@gmail.com",
+        subject: `Lista de asistencia`,
+        text: `Nombre del invitado: ${completename}. 
          Asistencia: ${attendance} . 
          Teléfono registrado: ${phone}. Hasta ahora han confirmado ${res.id} personas`,
-        })
-        .then(() => console.log("mensaje enviado"))
-        .catch((error) => console.log(error));
-    }
+      })
+      .then(() => console.log("mensaje enviado"))
+      .catch((error) => console.log(error));
+
   } catch (error) {
     res.status(400).json(error);
   }

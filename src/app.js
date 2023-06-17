@@ -6,9 +6,7 @@ const absence = require("./models/absences.models");
 const confirmationrRoute = require("./routes/confirmation.routes");
 const absenceRoute = require("./routes/absences.routes")
 const cors = require("cors");
-const path = require("path");
-
-
+const transporter = require("./utils/mailer")
 
 
 confirmation;
