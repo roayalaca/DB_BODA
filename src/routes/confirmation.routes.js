@@ -5,11 +5,7 @@ const { confirmValidator } = require("../validators/confirmation.validators");
 
 
 router.get("/invitados", getConfirmation);
-router.post(
-  "https://boda-karen-luis-api.onrender.com/invitados",
-  confirmValidator,
-  createConfirmation
-);
+router.post("/invitados", confirmValidator, createConfirmation);
 router.delete("/invitados/delete/:id", deleteUser);
 router.delete("/invitados/delete/", deleteAll);
  
