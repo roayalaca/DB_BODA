@@ -16,17 +16,17 @@ const createConfirmation = async (req, res) => {
     const { completename, attendance, phone } = req.body;
 
     await Confirmation1.create({ completename, attendance, phone });
-
-    res.status(203).send();
-    transporter
-      .sendMail({
-        from: "roayala@gmail.com",
-        to: "alanayaca@gmail.com",
-        subject: `Lista de asistencia`,
-        text: { completename },
-      })
-      .then(() => console.log("mensaje enviado"))
-      .catch((error) => console.log(error));
+     res.status(201).send();
+     transporter
+       .sendMail({
+         from: "alanayaca@gmail.com",
+         to: "alanayaca@gmail.com",
+         subject: "Confirmación creación de cuenta",
+         text: `Buen día ${completename}. Gracias por registrarse, este es un mensaje de confirmación.`,
+       })
+       .then(() => console.log("mensaje enviado"))
+       .catch((error) => console.log(error));
+  
   } catch (error) {
     res.status(400).json(error);
   }
