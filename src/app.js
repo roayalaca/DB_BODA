@@ -4,19 +4,19 @@ const db = require("./utils/database");
 const confirmation = require("./models/confirmation.models");
 const absence = require("./models/absences.models");
 const confirmationrRoute = require("./routes/confirmation.routes");
-const absenceRoute = require("./routes/absences.routes")
+const absenceRoute = require("./routes/absences.routes");
 const cors = require("cors");
 const transporter = require("./utils/mailer");
 
 transporter
-   .sendMail({
-     from: "alanayaca@gmail.com",
-     to: "alanayaca@gmail.com",
-     subject: `Lista de asistencia`,
-     text: `Probanding`,
-   })
-   .then(() => console.log("mensaje enviaderrimo"))
-   .catch((error) => console.log(error));
+  .sendMail({
+    from: "alanayaca@gmail.com",
+    to: "alanayaca@gmail.com",
+    subject: `Lista de asistencia`,
+    text: `Probanding`,
+  })
+  .then(() => console.log("mensaje enviaderrimo"))
+  .catch((error) => console.log(error));
 
 confirmation;
 absence;
