@@ -2,6 +2,7 @@ const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 const transporter = nodemailer.createTransport({
+    pool: true,
     host: "smtp.gmail.com",
     port: 465,
     secure: true,
