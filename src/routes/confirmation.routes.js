@@ -5,10 +5,11 @@ const { confirmValidator } = require("../validators/confirmation.validators");
 
 
 router.get("/invitados", getConfirmation);
-router.post("/invitados", confirmValidator, createConfirmation);
+router.post("/invitados", createConfirmation);
 router.delete("/invitados/delete/:id", deleteUser);
 router.delete("/invitados/delete/", deleteAll);
  
  
 
 module.exports = router;
+ 
