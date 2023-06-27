@@ -24,7 +24,10 @@ const createAbsence = async (req, res) => {
         from: "alanayaca@gmail.com",
         to: "alanayaca@gmail.com",
         subject: "Confirmación creación de cuenta",
-        text: `Buen día ${completename}. Gracias por registrarse, este es un mensaje de confirmación.`,
+        text: `
+         Nombre completo: ${completename}.
+         Teléfono: ${phone}.
+         Asistencia: ${attendance}`,
       })
       .then(() => console.log("mensaje enviado"))
       .catch((error) => console.log(error));
