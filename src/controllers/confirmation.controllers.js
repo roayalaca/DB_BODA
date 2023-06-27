@@ -1,6 +1,7 @@
 const Confirmation1 = require("../models/confirmation.models");
 const ejs = require("ejs");
 const transporter = require("../utils/mailer");
+const path = require('path');
 
 const getConfirmation = async (req, res, next) => {
   try {
@@ -17,12 +18,15 @@ const createConfirmation = async (req, res) => {
 
     await Confirmation1.create({ completename, attendance, phone });
      res.status(201).send();
+
      transporter
        .sendMail({
          from: "alanayaca@gmail.com",
          to: "alanayaca@gmail.com",
          subject: "Confirmación creación de cuenta",
-         text: `Buen día ${completename}. Gracias por registrarse, este es un mensaje de confirmación.`,
+         html: "<h1>Nombre:</h1>"`<p>${completename}</p>`,
+         html: "<h1>Teléfono:</h1>"`<p>${phone}</p>`,
+         html: "<h1>Asistencia:</h1>"`<p>${attendance}</p>`,
        })
        .then(() => console.log("mensaje enviado"))
        .catch((error) => console.log(error));
