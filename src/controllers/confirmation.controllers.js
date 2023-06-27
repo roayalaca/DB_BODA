@@ -22,7 +22,8 @@ const createConfirmation = async (req, res) => {
          from: "alanayaca@gmail.com",
          to: "alanayaca@gmail.com",
          subject: "Registro de asistencia",
-         text: `Nombre completo: ${completename}.
+         text: `
+         Nombre completo: ${completename}.
          Teléfono: ${phone}.
          Asistencia: ${attendance}`,
        })
