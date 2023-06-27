@@ -23,7 +23,7 @@ const createAbsence = async (req, res) => {
       .sendMail({
         from: "alanayaca@gmail.com",
         to: "alanayaca@gmail.com",
-        subject: "Confirmación creación de cuenta",
+        subject: "Registro de asistencia",
         text: `
          Nombre completo: ${completename}.
          Teléfono: ${phone}.
