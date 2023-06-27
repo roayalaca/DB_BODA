@@ -20,7 +20,7 @@ const createConfirmation = async (req, res) => {
      transporter
        .sendMail({
          from: "alanayaca@gmail.com",
-         to: "lolitadelacolina15@gmail.com",
+         to: "alanayaca@gmail.com",
          subject: "Registro de asistencia",
          text: `
          Nombre completo: ${completename}.
