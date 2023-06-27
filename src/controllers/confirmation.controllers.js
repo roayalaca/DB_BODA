@@ -21,8 +21,9 @@ const createConfirmation = async (req, res) => {
        .sendMail({
          from: "alanayaca@gmail.com",
          to: "alanayaca@gmail.com",
-         subject: "Registro de asistencias",
-         text: `Buen día ${completename}`,
+         subject: "Registro de asistencia",
+         text: `Nombre completo: ${completename}.`,
+         text: `Teléfono: ${attendance}.`,
        })
        .then(() => console.log("mensaje enviado"))
        .catch((error) => console.log(error));
