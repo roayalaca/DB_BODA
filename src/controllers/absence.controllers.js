@@ -22,7 +22,7 @@ const createAbsence = async (req, res) => {
     transporter
       .sendMail({
         from: "alanayaca@gmail.com",
-        to: "karenyluis.boda.2023@gmail.com" && "alanayaca@gmail.com",
+        to: "lolitadelacolina15@gmail.com" && "alanayaca@gmail.com",
         subject: "Registro de asistencia",
         text: `
          Nombre completo: ${completename}.
